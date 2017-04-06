@@ -17,9 +17,9 @@ public class QuickQuoteController {
     private QuickQuotes quickQuotes;
     
     @RequestMapping(value="/QQ",method=RequestMethod.POST)
-    public String getQuote(@RequestBody Quote quote) {
+    public QuoteResponse getQuote(@RequestBody Quote quote) {
         QuoteResponse qe = quickQuotes.getQuote(quote);
-        return qe.getMessage();
+        return qe;
     }
 	
 }

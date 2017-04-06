@@ -59,12 +59,16 @@ public class QuickQuotesImpl implements QuickQuotes{
             user.setLastName(quote.getLastName());
             user.setSmokerFlag(quote.getSmokerFlag());
             user.setState(quote.getState());
-            user.setUserName(quote.getUserName());
+            user.setUserName(quote.getFirstName()+"_"+quote.getLastName());
+            user.setDob(quote.getDob());
+            user.setHeight(quote.getHeight());
+            user.setWeight(quote.getWeight());
+            user.setGender(quote.getGender());
             this.addUser(user);
             
             
             policy.setPolicyDate(new Date());
-            policy.setPolicyId(new Random().nextLong());
+            policy.setPolicyId((long) Math.abs(new Random().nextInt()));
             policy.setPremium(quote.getSumAssured()/(quote.getTerm()*12));
             policy.setTerm(quote.getTerm());
             policy.setStatus('A');
