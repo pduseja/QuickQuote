@@ -71,7 +71,7 @@ public class QuickQuotesImpl implements QuickQuotes{
             policy.setPolicyDate(new Date());
             policy.setPolicyId((long) Math.abs(new Random().nextInt()));
             float prem = quote.getSumAssured()/(quote.getTerm()*12);
-            String premS = new DecimalFormat("####.##").format(prem);
+            String premS = new DecimalFormat("####.####").format(prem);
             policy.setPremium(Float.parseFloat(premS));
             policy.setTerm(quote.getTerm());
             policy.setStatus('A');
